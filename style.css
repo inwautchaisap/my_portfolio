@@ -1,0 +1,635 @@
+@font-face {
+    font-family: 'Inter';
+    src: url(../fonts/inter/Inter-VariableFont_opsz\,wght.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/roboto/Roboto/Roboto-VariableFont_wdth\,wght.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+}
+
+:root {
+    /* Background Color */
+    --bg-white: #fff;
+    --bg-dark-color: rgb(10, 10, 10);
+
+    /* Text Colors */
+    --primary-text: #6a0405;
+    --secondary-color: #ff0000;
+    --light-color: #e6e6e6;
+    --dark-color: #1f1f1f;
+    --text-white: #fff;
+    --text-gray: #dee2e6;
+    --anchor-color: #007aff;
+
+    /* Font Family */
+    --primary-font: 'Inter', sans-serif;
+    --secondary-font: 'Roboto', sans-serif;
+}
+
+body,
+html {
+    color: var(--primary-text);
+    font-size: 10px;
+    font-weight: 400;
+    font-family: var(--primary-font);
+    scroll-behavior: smooth;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 9rem;
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--primary-text);
+}
+
+h2 {
+    color: var(--primary-text);
+    font-size: 4.7rem;
+    font-weight: 600;
+    display: inline-block;
+    text-transform: capitalize;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    color: var(--text-white);
+    font-size: 3.1rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--primary-text);
+}
+
+h5 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--primary-text);
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+    color: var(--primary-text);
+    font-family: var(--secondary-font);
+}
+
+embed,
+iframe,
+img,
+object {
+    max-width: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a,
+a:active,
+a:focus,
+a:hover,
+button {
+    text-decoration: none;
+    outline: 0;
+}
+
+li a {
+    color: var(--text-white);
+}
+
+a:hover,
+button:hover {
+    -webkit-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+}
+
+.btn.main-btn {
+    position: relative;
+    color: var(--bg-white);
+    background: linear-gradient(to right, #740404, #b91717);
+    z-index: 1;
+    overflow: hidden;
+    border: .2rem solid var(--bg-white);
+    border-radius: 3.5rem;
+    text-transform: uppercase;
+    padding: 1rem 3.5rem;
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+    letter-spacing: .2rem;
+}
+
+.btn.main-btn:hover {
+    background: var(--bg-white);
+    color: var(--secondary-color);
+    border: .2rem solid var(--secondary-color);
+}
+
+section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--primary-text);
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
+
+.section-subtitle {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--primary-text);
+    font-family: var(--secondary-font);
+    max-width: 40%;
+    margin: auto;
+    margin-bottom: 1.5rem;
+}
+
+.about .banner_section,
+.product .banner_section,
+.gallery .banner_section,
+.contact .banner_section {
+    background: url(../images/banner-slide/top-banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 17rem;
+    padding-bottom: 10rem;
+    min-height: auto;
+}
+
+/* 01 navbar css */
+.header {
+    position: absolute;
+    width: 100%;
+    top: 2rem;
+    left: 0;
+    z-index: 2;
+}
+
+.header .navbar {
+    background: url(../images/header-bg.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 2rem 5rem;
+}
+
+.header .navbar-brand {
+    width: 13rem;
+    margin-top: -.1rem;
+}
+
+.header .navbar-nav .nav-link {
+    color: var(--text-white);
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: .5rem 2rem;
+    margin: 0 .2rem;
+    font-family: var(--primary-font);
+}
+
+.header .navbar-nav .nav-link:hover,
+.header .navbar-nav .nav-link.active {
+    color: var(--secondary-color);
+}
+
+.header .navbar-toggler {
+    color: var(--text-white);
+    font-size: 2rem;
+    height: 2.7rem;
+    padding: 0;
+}
+
+.header .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.header .header_right span {
+    color: var(--secondary-color);
+    display: block;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-right: 1rem;
+}
+
+.header .header_right .phone_no {
+    color: var(--text-white);
+    font-size: 1.6rem;
+}
+
+.header-scrolled {
+    position: fixed;
+    top: -.4rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 1320px;
+    margin: auto;
+    z-index: 999;
+    transition: all .3s ease-in-out;
+}
+
+
+
+
+/* 02 Banner Section */
+.banner_section {
+    background-image: url(../images/banner-slide/top-banner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 90vh;
+}
+
+.banner_section .carousel-item {
+    padding: 3rem 0;
+    height: 90vh;
+
+}
+
+.banner_section .carousel-caption {
+    top: 20%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: left;
+    width: 100%;
+    height: auto;
+    padding: 3rem 5rem 0;
+
+}
+
+.banner_section .banner-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.banner_section .banner-content img {
+    margin: 0 auto;
+    object-fit: contain;
+    border-bottom: 1rem solid #fff;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0, 1);
+    border-radius: 22px;
+}
+
+
+/* 03 Features CSS */
+.feature_section {
+    background-image: url(../photoshop/overlays/2f86f0b5-cbd2-460d-a2f7-c9fb784bdd9b.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.feature_section .features-box {
+    background-color: #fff;
+    border: .15rem solid var(--secondary-color);
+    padding: 8rem 0;
+    transition: all .3s;
+}
+
+.feature_section .features-icon-border {
+    background-color: transparent;
+    border-radius: 50%;
+    border: .2rem solid var(--dark-color);
+    padding: 1.3rem;
+    display: inline-block;
+}
+
+.feature_section .features-box .features-icon {
+    height: 6.5rem;
+    width: 6.5rem;
+    background-color: var(--primary-text);
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature_section .features-box .features-icon img {
+    width: 3.7rem;
+}
+
+.feature_section .features-box h3 {
+    margin-top: 1.5rem;
+    color: var(--primary-text);
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.feature_section .features-box:hover {
+    background-color: var(--bg-dark-color);
+    border-color: var(--bg-dark-color);
+}
+
+.feature_section .features-box:hover h3 {
+    color: var(--text-white);
+}
+
+.feature_section .features-box:hover .features-icon-border {
+    border-color: var(--secondary-color);
+}
+
+/* 04 About Section  */
+.landing_about_section {
+    background: url(../images/about/about-banner_edit.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 9rem 0;
+}
+
+.landing_about_section p {
+    color: var(--primary-text);
+    margin-bottom: 2rem;
+}
+
+.landing_about_section .about-content h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+
+/* 05 product card design */
+.landing_product_section .product-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: .2rem solid var(--light-color);
+    padding: 2rem 1rem;
+    transition: all .3s;
+}
+
+.landing_product_section .product-card .product-img {
+    margin-bottom: 7rem;
+    text-align: center;
+}
+
+.landing_product_section .product-card h3 {
+    color: var(--primary-text);
+    font-size: 3.1rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.landing_product_section .product-card span {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    margin-right: .5rem;
+    text-decoration: line-through;
+    transition: all .3s;
+}
+
+.landing_product_section .product-card .product-detail {
+    position: absolute;
+    bottom: -22rem;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 5rem 1rem;
+    background-color: var(--dark-color);
+    transition: all .5s ease;
+}
+
+.landing_product_section .product-card:hover .product-detail {
+    bottom: 0;
+}
+
+
+
+/* 06 Testimonial */
+.testimonial_section {
+    background-color: var(--light-color);
+    padding-bottom: 8rem;
+}
+
+.testimonial_section .carousel-indicators {
+    bottom: -6rem;
+}
+
+.testimonial_section .carousel-indicators button {
+    background-color: var(--dark-color);
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+}
+
+.testimonial_section .card {
+    background: url(../images/testimonial/testimonial-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: right;
+    padding: 5rem 5rem 5rem 0;
+    border-radius: 0 .5rem .5rem 0;
+    border: .1rem solid transparent;
+}
+
+.testimonial_section .profile-box {
+    padding: 1.875rem;
+    background-color: var(--dark-color);
+    border-radius: .5rem 0 0 .5rem;
+}
+
+.testimonial_section .profile-box img {
+    border-radius: .625rem 3.125rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial_section .desc-box {
+    padding-left: 2.5rem;
+}
+
+
+/* 07 Galley CSS */
+.gallery_section {
+    background-color: #6a0405;
+}
+
+.gallery_section h2,
+.gallery_section p {
+    color: #fff;
+}
+
+.gallery_section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* 08 Fotter CSS */
+.footer_wrapper {
+    background: url(../images/footer-bg/footer_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-top: 15rem;
+    padding-bottom: 0;
+}
+
+.footer_wrapper h5 {
+    color: var(--text-white);
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.footer_wrapper ul li {
+    margin-bottom: .5rem;
+    list-style: none;
+}
+
+.footer_wrapper ul li a {
+    text-decoration: none;
+}
+
+.footer_wrapper .company_details {
+    font-size: 1.4rem;
+}
+
+.footer_wrapper .contact-info li a {
+    color: var(--text-gray);
+    font-size: 1.6rem;
+}
+
+.footer_wrapper .link-widget li a,
+.footer_wrapper p {
+    color: var(--text-gray);
+    font-size: 1.6rem;
+    padding-left: 1.5rem;
+    position: relative;
+    -webkit-transition: all .3s ease-out 0s;
+    transition: all .3s ease-out 0s;
+}
+
+.footer_wrapper .link-widget li a::before {
+    content: '\f105';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: .3rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.footer_wrapper .link-widget li a:hover {
+    margin-left: .625rem;
+    color: var(--secondary-color);
+}
+
+.footer_wrapper .social-network a {
+    width: 3.5rem;
+    height: 3.5rem;
+    line-height: 3.2rem;
+    margin: .5rem;
+    display: inline-block;
+    border: .125rem solid var(--text-gray);
+    color: var(--text-gray);
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 100%;
+    -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+}
+
+.footer_wrapper .social-network a:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--text-white);
+    box-shadow: 0 .625rem .9375rem 0 rgb(0 0 0 /10%);
+    transform: translateY(-.1875rem);
+}
+
+.footer_wrapper .form-control {
+    font-size: 2rem;
+    color: var(--text-white);
+}
+
+.footer_wrapper .form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: var(--secondary-color);
+}
+
+.footer_wrapper .copyright-section {
+    background-color: var(--primary-text);
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.footer_wrapper .copyright-section p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 3rem 0;
+    line-height: 0;
+}
+
+.footer_wrapper .copyright-section a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
